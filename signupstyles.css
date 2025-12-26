@@ -1,35 +1,75 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    background-color: #F5F5DC;
 }
 
 .signup-container {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    margin: 10px 10px;
-    padding: 10px 10px;
+    align-items: center;
+    padding: 20px;
     gap: 20px;
 }
 
 .signup-container h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #4B2E1E
+    color: #4B2E1E;
+    font-size: 28px;
 }
 
-.signup-form div {
+.signup-form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 15px;
     align-items: center;
 }
 
-.signup-form label {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 18px;
-    color: #4B2E1E;
-    font-size: 18px;
-    text-align: center;
-    margin-right: 20px;
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #D2B48C;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-row label {
     width: 150px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #4B2E1E;
+    text-align: right;
+    margin-right: 20px;
+    background-color: #D2B48C;
+}
+
+.form-row input {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #FFF8DC;
+}
+
+.signup-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4B2E1E;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #6B3E2E;
 }
