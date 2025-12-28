@@ -41,3 +41,39 @@ nav a {
     margin-left: 20px;
     margin-right: 20px;
 }
+
+.hero {
+    background-color: #FFF5E1;
+    padding: 60px 20px;
+    text-align: center;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero-content .btn {
+    text-decoration: none;
+    background-color: #4B2E1E;
+    color: #FFF5E1;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 20%;
+}
+
+.hero-content .btn:hover {
+    background-color: #3A2315;
+}
