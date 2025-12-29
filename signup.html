@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="signupstyles.css">
-    <title>MITTIBAZAAR SIGNUP PAGE</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Sign Up - MITTI BAZAAR</title>
 </head>
 
 <body>
@@ -20,38 +20,145 @@
             <a href="contact.html">Contact</a>
             <a href="login.html">Login</a>
             <a href="signup.html">SignUp</a>
+            <a href="cart.html">Cart</a>
         </nav>
     </div>
-    <div class="signup-container">
-        <h1>Sign Up Page for MITTIBAZAAR</h1>
-        <form action="signup_form_submit" method="post" class="signup-form">
+
+    <section class="signup-section">
+        <h2>Create Your Account</h2>
+        <p>Join MittiBazaar to start shopping for beautiful handmade crafts.</p>
+
+        <form id="signup-form" class="signup-form">
             <div class="form-row">
-                <label for="username">Username:</label>
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+                <span class="error-msg" id="fullname-error"></span>
+            </div>
+
+            <div class="form-row">
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
+                <span class="error-msg" id="username-error"></span>
             </div>
+
             <div class="form-row">
-                <label for="email">Email:</label>
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
+                <span class="error-msg" id="email-error"></span>
             </div>
+
             <div class="form-row">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" required>
+                <span class="error-msg" id="phone-error"></span>
             </div>
+
             <div class="form-row">
-                <label for="phone-number">Phone Number:</label>
-                <input type="text" id="phone-number" name="phone-number" required>
-            </div>
-            <div class="form-row">
-                <label for="password">Password:</label>
+                <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
+                <span class="error-msg" id="password-error"></span>
             </div>
+
             <div class="form-row">
-                <label for="confirm-password">Confirm Password:</label>
+                <label for="confirm-password">Confirm Password</label>
                 <input type="password" id="confirm-password" name="confirm-password" required>
+                <span class="error-msg" id="confirm-password-error"></span>
             </div>
-            <button type="submit" class="signup-button">Sign Up</button>
+
+            <button type="submit" class="btn submit-btn">Create Account</button>
+            <span id="form-success" class="success-msg"></span>
         </form>
-    </div>
+
+        <p style="text-align: center; margin-top: 20px;">Already have an account? <a href="login.html"
+                style="color: #4B2E1E; font-weight: bold;">Login here</a></p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@mittibazaar.example</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2025 MittiBazaar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Clear previous errors
+            document.getElementById('fullname-error').textContent = '';
+            document.getElementById('username-error').textContent = '';
+            document.getElementById('email-error').textContent = '';
+            document.getElementById('phone-error').textContent = '';
+            document.getElementById('password-error').textContent = '';
+            document.getElementById('confirm-password-error').textContent = '';
+            document.getElementById('form-success').textContent = '';
+
+            // Get form values
+            const fullname = document.getElementById('fullname').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirm-password').value.trim();
+
+            let isValid = true;
+
+            // Validate full name
+            if (fullname.length < 3) {
+                document.getElementById('fullname-error').textContent = 'Full name must be at least 3 characters.';
+                isValid = false;
+            }
+
+            // Validate username
+            if (username.length < 3) {
+                document.getElementById('username-error').textContent = 'Username must be at least 3 characters.';
+                isValid = false;
+            }
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+                isValid = false;
+            }
+
+            // Validate phone
+            if (phone.length < 10) {
+                document.getElementById('phone-error').textContent = 'Please enter a valid phone number.';
+                isValid = false;
+            }
+
+            // Validate password
+            if (password.length < 6) {
+                document.getElementById('password-error').textContent = 'Password must be at least 6 characters.';
+                isValid = false;
+            }
+
+            // Validate password match
+            if (password !== confirmPassword) {
+                document.getElementById('confirm-password-error').textContent = 'Passwords do not match.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById('form-success').textContent = 'Account created successfully! Redirecting to login...';
+                document.getElementById('signup-form').reset();
+                setTimeout(() => {
+                    alert('Account created! (Demo)');
+                }, 1500);
+            }
+        });
+    </script>
 </body>
 
 </html>

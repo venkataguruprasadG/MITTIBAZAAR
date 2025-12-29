@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact Us - MITTI BAZAAR</title>
+</head>
+
+<body>
+    <div class="navbar-container">
+        <nav>
+            <div class="logo-wrapper">
+                <img src="PICTURES/NAVBAR_LOGO.png" alt="MITTIBAZAAR LOGO" class="navbar-logo">
+            </div>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">SignUp</a>
+        </nav>
+    </div>
+
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have questions? We'd love to hear from you. Fill out the form below and we'll get back to you shortly.</p>
+
+        <form id="contact-form" class="contact-form">
+            <div class="form-row">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-msg" id="name-error"></span>
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-msg" id="email-error"></span>
+            </div>
+
+            <div class="form-row">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <span class="error-msg" id="message-error"></span>
+            </div>
+
+            <button type="submit" class="btn submit-btn">Send Message</button>
+            <span id="form-success" class="success-msg"></span>
+        </form>
+
+        <div class="contact-info">
+            <h3>Direct Contact</h3>
+            <p><strong>Email:</strong> hello@mittibazaar.example</p>
+            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+            <p><strong>Address:</strong> 123 Artisan Lane, Creative City, CC 12345</p>
+            <p><strong>Hours:</strong> Monday - Friday, 9 AM - 6 PM IST</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@mittibazaar.example</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2025 MittiBazaar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Clear previous errors
+            document.getElementById('name-error').textContent = '';
+            document.getElementById('email-error').textContent = '';
+            document.getElementById('message-error').textContent = '';
+            document.getElementById('form-success').textContent = '';
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            let isValid = true;
+
+            // Validate name
+            if (name.length < 3) {
+                document.getElementById('name-error').textContent = 'Name must be at least 3 characters.';
+                isValid = false;
+            }
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+                isValid = false;
+            }
+
+            // Validate message
+            if (message.length < 10) {
+                document.getElementById('message-error').textContent = 'Message must be at least 10 characters.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById('form-success').textContent = 'Thank you! Your message has been sent successfully.';
+                document.getElementById('contact-form').reset();
+                setTimeout(() => {
+                    document.getElementById('form-success').textContent = '';
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+
+</html>

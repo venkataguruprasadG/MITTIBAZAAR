@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF5E1;
+    color: #333;
+}
+
 nav {
     display: flex;
     flex-direction: row;
@@ -25,7 +31,7 @@ nav a {
 }
 
 .navbar-container {
-    background-color: #f2f2f2;
+    background-color: #D2B48C;
     font-size: 30px;
     height: 50px;
     width: 100%;
@@ -76,4 +82,583 @@ nav a {
 
 .hero-content .btn:hover {
     background-color: #3A2315;
+}
+
+.featured-products {
+    text-align: center;
+    padding: 50px 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #FFF5E1;
+}
+
+.featured-products h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #4B2E1E;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.product-card {
+    background-color: #f9f9f9;
+    border: 1px solid #D2B48C;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card h3 {
+    font-size: 24px;
+    margin-top: 12px;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-card .price {
+    font-size: 18px;
+    color: #4B2E1E;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #4B2E1E;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #3A2315;
+}
+
+/* About Section */
+.about-section {
+    padding: 50px 20px;
+    background-color: #F5F5DC;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 50px 20px;
+    background-color: #FFF5E1;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 30px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #D2B48C;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-size: 16px;
+    color: #333;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Products Page */
+.products-section {
+    padding: 50px 20px;
+    background-color: #FFF5E1;
+}
+
+.products-section h2 {
+    font-size: 36px;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cart Section */
+.cart-section {
+    padding: 50px 20px;
+    background-color: #FFF5E1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cart-section h2 {
+    font-size: 36px;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.cart-table th {
+    background-color: #4B2E1E;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.cart-table td {
+    padding: 12px;
+    border-bottom: 1px solid #D2B48C;
+}
+
+.qty-input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #D2B48C;
+    border-radius: 5px;
+}
+
+.btn-remove {
+    background-color: #d9534f;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.btn-remove:hover {
+    background-color: #c9302c;
+}
+
+.cart-summary {
+    text-align: right;
+    padding: 20px;
+    background-color: #F5F5DC;
+    border-radius: 10px;
+}
+
+.cart-summary h3 {
+    font-size: 24px;
+    color: #4B2E1E;
+    margin-bottom: 15px;
+}
+
+.cart-summary .btn {
+    margin-left: 10px;
+}
+
+.checkout-btn {
+    background-color: #6B3E2E;
+}
+
+.checkout-btn:hover {
+    background-color: #5A3226;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #F5F5DC;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contact-section>p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.contact-form {
+    background-color: #D2B48C;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.contact-form .form-row {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #4B2E1E;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.error-msg {
+    color: #d9534f;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.success-msg {
+    color: #5cb85c;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+}
+
+.contact-info {
+    background-color: #F5F5DC;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #D2B48C;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    line-height: 2;
+    color: #333;
+}
+
+.contact-info strong {
+    color: #4B2E1E;
+}
+
+/* Login Section */
+.login-section {
+    padding: 50px 20px;
+    background-color: #F5F5DC;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.login-section h2 {
+    font-size: 36px;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.login-section>p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.login-form {
+    background-color: #D2B48C;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-form .form-row {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #4B2E1E;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Signup Section */
+.signup-section {
+    padding: 50px 20px;
+    background-color: #F5F5DC;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.signup-section h2 {
+    font-size: 36px;
+    color: #4B2E1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.signup-section>p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.signup-form {
+    background-color: #D2B48C;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup-form .form-row {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #4B2E1E;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.signup-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Footer */
+.footer {
+    background-color: #4B2E1E;
+    color: #FFF5E1;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    gap: 20px;
+}
+
+.footer-section h4 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-section a {
+    color: #FFF5E1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #D2B48C;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        gap: 20px;
+        padding-left: 10px;
+        font-size: 14px;
+    }
+
+    .navbar-logo {
+        height: 80px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .featured-grid,
+    .products-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        gap: 10px;
+        padding-left: 10px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-logo {
+        height: 60px;
+    }
+
+    .hero {
+        padding: 30px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .hero-content h2 {
+        font-size: 18px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .featured-products,
+    .about-section,
+    .testimonials-section,
+    .products-section,
+    .cart-section,
+    .contact-section,
+    .login-section,
+    .signup-section {
+        padding: 30px 15px;
+    }
+
+    .featured-grid,
+    .products-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
 }

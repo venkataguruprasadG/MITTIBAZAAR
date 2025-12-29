@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Products - MITTI BAZAAR</title>
+</head>
+
+<body>
+    <div class="navbar-container">
+        <nav>
+            <div class="logo-wrapper">
+                <img src="PICTURES/NAVBAR_LOGO.png" alt="MITTIBAZAAR LOGO" class="navbar-logo">
+            </div>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">SignUp</a>
+        </nav>
+    </div>
+
+    <section class="products-section">
+        <h2>Our Products</h2>
+        <div class="products-grid">
+            <div class="product-card" data-id="1" data-name="Clay Pot" data-price="25">
+                <img src="PICTURES/PRODUCTS/CLAY POT.png" alt="Clay Pot">
+                <h3>Clay Pot</h3>
+                <p class="price">$25</p>
+                <button class="btn add-to-cart" onclick="addToCart(1, 'Clay Pot', 25)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="2" data-name="Terracotta Vase" data-price="40">
+                <img src="PICTURES/PRODUCTS/TERRACOTTA VASE.png" alt="Terracotta Vase">
+                <h3>Terracotta Vase</h3>
+                <p class="price">$40</p>
+                <button class="btn add-to-cart" onclick="addToCart(2, 'Terracotta Vase', 40)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="3" data-name="Ceramic Bowl" data-price="18">
+                <img src="PICTURES/PRODUCTS/BOWL.png" alt="Ceramic Bowl">
+                <h3>Ceramic Bowl</h3>
+                <p class="price">$18</p>
+                <button class="btn add-to-cart" onclick="addToCart(3, 'Ceramic Bowl', 18)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="4" data-name="Clay Mug" data-price="12">
+                <img src="PICTURES/PRODUCTS/MUG.png" alt="Clay Mug">
+                <h3>Clay Mug</h3>
+                <p class="price">$12</p>
+                <button class="btn add-to-cart" onclick="addToCart(4, 'Clay Mug', 12)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="5" data-name="Serving Plate" data-price="30">
+                <img src="PICTURES/PRODUCTS/PLATE.png" alt="Serving Plate">
+                <h3>Serving Plate</h3>
+                <p class="price">$30</p>
+                <button class="btn add-to-cart" onclick="addToCart(5, 'Serving Plate', 30)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="6" data-name="Decorative Tile" data-price="15">
+                <img src="PICTURES/PRODUCTS/TILE.png" alt="Decorative Tile">
+                <h3>Decorative Tile</h3>
+                <p class="price">$15</p>
+                <button class="btn add-to-cart" onclick="addToCart(6, 'Decorative Tile', 15)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@mittibazaar.example</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2025 MittiBazaar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+
+</html>

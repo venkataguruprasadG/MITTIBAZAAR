@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Shopping Cart - MITTI BAZAAR</title>
+</head>
+
+<body>
+    <div class="navbar-container">
+        <nav>
+            <div class="logo-wrapper">
+                <img src="PICTURES/NAVBAR_LOGO.png" alt="MITTIBAZAAR LOGO" class="navbar-logo">
+            </div>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">SignUp</a>
+        </nav>
+    </div>
+
+    <section class="cart-section">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items">
+            <p>Loading cart...</p>
+        </div>
+        <div class="cart-summary">
+            <h3>Total: <span id="cart-total">$0.00</span></h3>
+            <button class="btn checkout-btn">Proceed to Checkout</button>
+            <a href="products.html" class="btn">Continue Shopping</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@mittibazaar.example</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2025 MittiBazaar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        function renderCart() {
+            const cartContainer = document.getElementById('cart-items');
+            const cart = getCart();
+
+            if (Object.keys(cart).length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty. <a href="products.html">Shop now</a></p>';
+                document.getElementById('cart-total').textContent = '$0.00';
+                return;
+            }
+
+            let html = '<table class="cart-table"><thead><tr><th>Product</th><th>Price</th><th>Quantity</th><th>Subtotal</th><th>Action</th></tr></thead><tbody>';
+            let total = 0;
+
+            for (let id in cart) {
+                const item = cart[id];
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                html += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td><input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${id}, this.value)" class="qty-input"></td>
+                        <td>$${subtotal.toFixed(2)}</td>
+                        <td><button onclick="removeFromCart(${id})" class="btn-remove">Remove</button></td>
+                    </tr>
+                `;
+            }
+            html += '</tbody></table>';
+            cartContainer.innerHTML = html;
+            document.getElementById('cart-total').textContent = '$' + total.toFixed(2);
+        }
+
+        renderCart();
+    </script>
+</body>
+
+</html>

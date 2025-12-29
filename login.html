@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login-page-style.css">
-    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Login - MITTI BAZAAR</title>
 </head>
 
 <body>
@@ -20,22 +20,88 @@
             <a href="contact.html">Contact</a>
             <a href="login.html">Login</a>
             <a href="signup.html">SignUp</a>
+            <a href="cart.html">Cart</a>
         </nav>
     </div>
-    <div class="login-form-container">
-        <h1>Login Page</h1>
-        <form action="login_form_submit" method="post" class="login-form">
+
+    <section class="login-section">
+        <h2>Login to Your Account</h2>
+        <p>Welcome back! Please log in to continue shopping.</p>
+
+        <form id="login-form" class="login-form">
             <div class="form-row">
-                <label for="username">Username: </label>
-                <input type="text" id="username" name="username" placeholder="username" required>
+                <label for="username">Username or Email</label>
+                <input type="text" id="username" name="username" required>
+                <span class="error-msg" id="username-error"></span>
             </div>
+
             <div class="form-row">
-                <label for="password">Password: </label>
-                <input type="text" id="password" name="password" placeholder="password" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error-msg" id="password-error"></span>
             </div>
-            <button type="submit" class="login-button">Login</button>
+
+            <button type="submit" class="btn submit-btn">Login</button>
+            <span id="form-success" class="success-msg"></span>
         </form>
-    </div>
+
+        <p style="text-align: center; margin-top: 20px;">Don't have an account? <a href="signup.html"
+                style="color: #4B2E1E; font-weight: bold;">Sign up here</a></p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@mittibazaar.example</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2025 MittiBazaar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Clear previous errors
+            document.getElementById('username-error').textContent = '';
+            document.getElementById('password-error').textContent = '';
+            document.getElementById('form-success').textContent = '';
+
+            // Get form values
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            let isValid = true;
+
+            // Validate username/email
+            if (username.length < 3) {
+                document.getElementById('username-error').textContent = 'Username must be at least 3 characters.';
+                isValid = false;
+            }
+
+            // Validate password
+            if (password.length < 6) {
+                document.getElementById('password-error').textContent = 'Password must be at least 6 characters.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById('form-success').textContent = 'Login successful! Redirecting...';
+                document.getElementById('login-form').reset();
+                setTimeout(() => {
+                    alert('Login successful! (Demo)');
+                }, 1500);
+            }
+        });
+    </script>
 </body>
 
 </html>

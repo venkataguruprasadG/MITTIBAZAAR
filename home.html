@@ -20,6 +20,7 @@
             <a href="contact.html">Contact</a>
             <a href="login.html">Login</a>
             <a href="signup.html">SignUp</a>
+            <a href="cart.html">Cart</a>
         </nav>
     </div>
     <section class="hero">
@@ -30,6 +31,79 @@
             <a href="products.html" class="btn">Shop Now</a>
         </div>
     </section>
+    <section class="featured-products">
+        <h2>Featured-Products</h2>
+        <div class="featured-grid">
+            <div class="product-card">
+                <h3>Handmade Clay Pot</h3>
+                <img src="PICTURES/PRODUCTS/CLAY POT.png" alt="clay pot">
+                <p class="price">$25</p>
+                <button class="btn" onclick="addToCart(1, 'Handmade Clay Pot', 25)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <h3>Terracotta Vase</h3>
+                <img src="PICTURES/PRODUCTS/TERRACOTTA VASE.png" alt="vase">
+                <p class="price">$40</p>
+                <button class="btn" onclick="addToCart(2, 'Terracotta Vase', 40)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <h3>Ceramic Bowl</h3>
+                <img src="PICTURES/PRODUCTS/BOWL.png" alt="bowl">
+                <p class="price">$18</p>
+                <button class="btn" onclick="addToCart(3, 'Ceramic Bowl', 18)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h2>About MittiBazaar</h2>
+        <p>At MittiBazaar, we celebrate handmade earthenware and sustainable artisanal crafts. Our mission is to bring
+            eco-friendly, one-of-a-kind pottery and homewares directly to your home. Each piece is crafted by skilled
+            artisans using traditional techniques passed down through generations, ensuring quality and authenticity.
+        </p>
+        <p>We partner with local makers who use sustainable practices, from natural clay sourcing to earth-friendly
+            firing methods. When you shop with MittiBazaar, you support fair trade and preserve cultural heritage.</p>
+    </section>
+
+    <section class="testimonials-section">
+        <h2>Customer Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The quality of these handmade pieces is exceptional. Every item tells a
+                    story. I've decorated my entire home with MittiBazaar products!"</p>
+                <p class="testimonial-author">— Sarah M., Mumbai</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Supporting local artisans has never been easier. The eco-friendly packaging
+                    and beautiful products make every purchase worthwhile."</p>
+                <p class="testimonial-author">— Rajesh K., Delhi</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I love the heritage and craftsmanship behind each piece. It's more than
+                    just a product—it's a connection to tradition."</p>
+                <p class="testimonial-author">— Priya N., Bangalore</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@mittibazaar.example</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2025 MittiBazaar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
 </body>
 
 </html>
